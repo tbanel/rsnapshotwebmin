@@ -1,8 +1,9 @@
-rsnapshotwebmin
+RsnapshotWebmin
 ===============
 
 Webmin Module for configuring Rsnapshot automatic backups
-http://tbanelwebmin.free.fr/
+
+Home page: http://tbanelwebmin.free.fr/
 
 Installation
 ============
@@ -10,11 +11,13 @@ Installation
 - Open Webmin in a web browser, usually the address is https://localhost:10000/
 - Go to Webmin > Webmin Configuration > Webmin Modules
 - Check Third party module from and choose the rsnapshot entry.
-- OR Check From ftp or http URL, 
-  and enter the url of the plug-in: http://tbanelwebmin.free.fr/rsnapshot-0.3.wbm.gz
+- OR Check From ftp or http URL,
+  and enter the url of the plug-in:
+  http://tbanelwebmin.free.fr/rsnapshot-0.3.wbm.gz
 
-When done, the module is accessible from System > Rsnapshot Backup
-You may also download the module (http://tbanelwebmin.free.fr/rsnapshot-0.3.wbm.gz)
+When done, the module is accessible from System > Rsnapshot Backup.
+
+You may also download the module here: http://tbanelwebmin.free.fr/rsnapshot-0.3.wbm.gz
 
 License
 =======
@@ -30,10 +33,11 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
 General Public License for more details.
 
 Author: © 2012, 2013, 2014, Thierry Banel <tbanelwebmin@free.fr>
+
 Contributors (with permission):
-  Ken <ken () farville dot com>
-  Nico Kadel-Garcia <nkadel () gmail dot com>
-  ...and others
+  - Ken (ken at farville dot com)
+  - Nico Kadel-Garcia (nkadel at gmail dot com)
+  - ...and others
 
 About Webmin
 ============
@@ -62,3 +66,8 @@ WebRsnapshot (http://dobrev.ws/projects/webrsnapshot) by Georgi Dobrev
 is quite similar to the Webmin Rsnapshot module.
 The main difference is that it works on it own, whereas the
 Webmin Rsnapshot module is part of the Webmin system administrator.
+
+Here is a tutorial
+(http://ubuntupop.blogspot.fr/2014/04/install-rsnapshot-module-on-webmin.html)
+by Fitri Aryani about installation of the module.
+
