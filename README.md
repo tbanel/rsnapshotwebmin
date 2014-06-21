@@ -7,13 +7,14 @@ http://tbanelwebmin.free.fr/
 Installation
 ============
 
-Open Webmin in a web browser, usually the address is https://localhost:10000/
-Go to Webmin > Webmin Configuration > Webmin Modules
-Check Third party module from and choose the rsnapshot entry.
-OR Check From ftp or http URL, 
-and enter the url of the plug-in: http://tbanelwebmin.free.fr/rsnapshot-0.3.wbm.gz
+- Open Webmin in a web browser, usually the address is https://localhost:10000/
+- Go to Webmin > Webmin Configuration > Webmin Modules
+- Check Third party module from and choose the rsnapshot entry.
+- OR Check From ftp or http URL, 
+  and enter the url of the plug-in: http://tbanelwebmin.free.fr/rsnapshot-0.3.wbm.gz
+
 When done, the module is accessible from System > Rsnapshot Backup
-You may also download the module
+You may also download the module (http://tbanelwebmin.free.fr/rsnapshot-0.3.wbm.gz)
 
 License
 =======
@@ -57,6 +58,7 @@ next use disk space.
 Related works
 =============
 
-WebRsnapshot by Georgi Dobrev is quite similar to the Webmin Rsnapshot
-module. The main difference is that it works on it own, whereas the
+WebRsnapshot (http://dobrev.ws/projects/webrsnapshot) by Georgi Dobrev
+is quite similar to the Webmin Rsnapshot module.
+The main difference is that it works on it own, whereas the
 Webmin Rsnapshot module is part of the Webmin system administrator.
