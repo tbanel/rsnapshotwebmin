@@ -1,0 +1,25 @@
+<header>Lock File</header>
+
+<p><strong>lockfile    /var/run/rsnapshot.pid</strong>
+
+</p>
+<p><strong>stop_on_stale_lockfile	0</strong>
+
+</p>
+<p>Lockfile to use when rsnapshot is run. This prevents a second invocation
+from clobbering the first one. If not specified, no lock file is used.
+Make sure to use a directory that is not world writeable for security
+reasons.  Use of a lock file is strongly recommended.
+
+</p>
+<p>If a lockfile exists when rsnapshot starts, it will try to read the file
+and stop with an error if it can't.  If it *can* read the file, it sees if
+a process exists with the PID noted in the file.  If it does, rsnapshot
+stops with an error message.  If there is no process with that PID, then
+we assume that the lockfile is stale and ignore it *unless*
+stop_on_stale_lockfile is set to 1 in which case we stop.
+
+</p>
+<p>stop_on_stale_lockfile defaults to 0.
+
+<footer>

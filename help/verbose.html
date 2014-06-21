@@ -1,0 +1,37 @@
+<header>Verbosity, Log Level, Log File</header>
+
+<p><strong>verbose             2</strong>
+
+</p>
+<p>The amount of information to print out when the program is run. Allowed values
+are 1 through 5. The default is 2.
+
+
+</p>
+<pre>
+    1        Quiet            Show fatal errors only
+    2        Default          Show warnings and errors
+    3        Verbose          Show equivalent shell commands being executed
+    4        Extra Verbose    Same as verbose, but with more detail
+    5        Debug            All kinds of information
+
+</pre>
+<p><strong>loglevel            3</strong>
+
+</p>
+<p>This number means the same thing as <strong>verbose</strong> above, but it determines how
+much data is written to the logfile, if one is being written.
+
+</p>
+<p>The only thing missing from this at the higher levels is the direct output
+from rsync. We hope to add support for this in a future release.
+
+</p>
+<p><strong>logfile             /var/log/rsnapshot</strong>
+
+</p>
+<p>Full filesystem path to the rsnapshot log file. If this is defined, a log file
+will be written, with the amount of data being controlled by <strong>loglevel</strong>. If
+this is commented out, no log file will be written.
+
+<footer>

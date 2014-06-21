@@ -1,0 +1,40 @@
+<header>Include, Exclude</header>
+
+</p>
+<p><strong>include             [file-name-pattern]</strong>
+
+</p>
+<p>This gets passed directly to rsync using the --include directive. This
+parameter can be specified as many times as needed, with one pattern defined
+per line. See the <code>rsync(1)</code> man page for the syntax.
+
+</p>
+<p><strong>exclude             [file-name-pattern]</strong>
+
+</p>
+<p>This gets passed directly to rsync using the --exclude directive. This
+parameter can be specified as many times as needed, with one pattern defined
+per line. See the <code>rsync(1)</code> man page for the syntax.
+
+<p><strong>Examples</strong></p>
+
+<table>
+  <tr>
+    <td><code>exclude /home/ada/tmp</code></td>
+    <td>-- Do not backup this temporary directory</td>
+  </tr>
+  <tr>
+    <td><code>exclude .VirtualBox/HardDisks/*.vdi</code></td>
+    <td>-- Do not save those huge virtual hard disks</td>
+  </tr>
+  <tr>
+    <td><code>exclude .googleearth/Cache/ </code></td>
+    <td>-- Ignore an application cache</td>
+  </tr>
+  <tr>
+    <td><code>exclude *~ </code></td>
+    <td>-- Ignore Emacs backup files</td>
+  </tr>
+</table>
+
+<footer>

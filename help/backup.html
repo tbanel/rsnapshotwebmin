@@ -1,0 +1,129 @@
+<header>Backup</header>
+
+</p>
+<p><strong>backup</strong>  /etc/                       localhost/
+
+</p>
+<p><strong>backup</strong>  <a href="mailto:root@example.com:/etc/">root@example.com:/etc/</a>      example.com/
+
+
+</p>
+<p><strong>backup</strong>  <a href="rsync://example.com/path2/">rsync://example.com/path2/</a>  example.com/
+
+</p>
+<p><strong>backup</strong>  /var/                       localhost/      one_fs=1
+
+</p>
+<p><strong>backup</strong>  <a href="lvm://vg0/home/path2/">lvm://vg0/home/path2/</a>       lvm-vg0/
+
+</p>
+
+<p><strong>backup_script</strong>   /usr/local/bin/backup_pgsql.sh    pgsql_backup/
+
+</p>
+<p>Examples:
+
+</p>
+<p><strong>backup   /etc/        localhost/</strong>
+
+</p>
+<p>Backs up /etc/ to &lt;snapshot_root&gt;/&lt;retain&gt;.0/localhost/etc/ using rsync on
+the local filesystem
+
+</p>
+<p><strong>backup   /usr/local/  localhost/</strong>
+
+</p>
+<p>Backs up /usr/local/ to &lt;snapshot_root&gt;/&lt;retain&gt;.0/localhost/usr/local/
+using rsync on the local filesystem
+
+</p>
+<p><strong>backup   <a href="mailto:root@example.com:/etc/">root@example.com:/etc/</a>       example.com/</strong>
+
+</p>
+<p>Backs up <a href="mailto:root@example.com:/etc/">root@example.com:/etc/</a> to &lt;snapshot_root&gt;/&lt;retain&gt;.0/example.com/etc/
+using rsync over ssh
+
+
+</p>
+<p><strong>backup   <a href="mailto:root@example.com:/usr/local/">root@example.com:/usr/local/</a> example.com/</strong>
+
+</p>
+<p>Backs up <a href="mailto:root@example.com:/usr/local/">root@example.com:/usr/local/</a> to
+&lt;snapshot_root&gt;/&lt;retain&gt;.0/example.com/usr/local/ using rsync over ssh
+
+</p>
+
+<p><strong>backup   <a href="rsync://example.com/pub/">rsync://example.com/pub/</a>      example.com/pub/</strong>
+
+</p>
+<p>Backs up <a href="rsync://example.com/pub/">rsync://example.com/pub/</a> to &lt;snapshot_root&gt;/&lt;retain&gt;.0/example.com/pub/
+using an anonymous rsync server. Please note that unlike backing up local paths
+and using rsync over ssh, rsync servers have ``modules'', which are top level
+directories that are exported. Therefore, the module should also be specified in
+the destination path, as shown in the example above (the pub/ directory at the
+end).
+
+</p>
+<p><strong>backup   /var/     localhost/   one_fs=1</strong>
+
+</p>
+<p>This is the same as the other examples, but notice the fourth column.
+This is how you specify per-backup-point options to over-ride global
+settings.  This extra parameter can take several options, separated
+by <strong>commas</strong>.
+
+</p>
+<p>It is most useful when specifying per-backup rsync excludes thus:
+
+</p>
+<p><strong>backup  root@somehost:/  somehost   +rsync_long_args=--exclude=/var/spool/</strong>
+
+</p>
+<p>Note the + sign.  That tells rsnapshot to <em>add</em> to the list of arguments
+to pass to rsync instead of replacing the list.
+
+</p>
+
+<p><strong>backup  <a href="lvm://vg0/home/path2/">lvm://vg0/home/path2/</a>       lvm-vg0/</strong>
+
+</p>
+<p>Backs up the LVM logical volume called home, of volume group vg0, to 
+&lt;snapshot_root&gt;/&lt;interval&gt;.0/lvm-vg0/. Will create, mount, backup, unmount and remove an LVM 
+snapshot for each lvm:// entry.
+
+</p>
+<p><strong>backup_script      /usr/local/bin/backup_database.sh   db_backup/</strong>
+
+</p>
+
+<p>In this example, we specify a script or program to run. This script should simply
+create files and/or directories in its current working directory. rsnapshot will
+then take that output and move it into the directory specified in the third column.
+
+</p>
+<p>Please note that whatever is in the destination directory will be completely
+deleted and recreated. For this reason, rsnapshot prevents you from specifying
+a destination directory for a backup_script that will clobber other backups.
+
+</p>
+<p>So in this example, say the backup_database.sh script simply runs a command like:
+
+</p>
+<p>#!/bin/sh
+
+</p>
+<p>mysqldump -uusername mydatabase &gt; mydatabase.sql
+
+</p>
+<p>chmod u=r,go= mydatabase.sql	# r-------- (0400)
+
+</p>
+<p>rsnapshot will take the generated ``mydatabase.sql'' file and move it into the
+&lt;snapshot_root&gt;/&lt;retain&gt;.0/db_backup/ directory. On subsequent runs,
+rsnapshot checks the differences between the files created against the
+previous files. If the backup script generates the same output on the next
+run, the files will be hard linked against the previous ones, and no
+additional disk space will be taken up.
+
+<footer>

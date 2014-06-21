@@ -1,0 +1,24 @@
+<header>Lazy deletes</header>
+
+<p><strong>use_lazy_deletes    1</strong>
+
+</p>
+<p>Changes default behavior of rsnapshot and does not initially remove the 
+oldest snapshot. Instead it moves that directory to _delete.[processid] and
+continues as normal. Once the backup has been completed, the lockfile will
+be removed before rsnapshot starts deleting the directory.
+
+</p>
+<p>Enabling this means that snapshots get taken sooner (since the delete doesn't
+come first), and any other rsnapshot processes are allowed to start while the
+final delete is happening. This benefit comes at the cost of using more
+disk space. The default is 0 (off).
+
+</p>
+<p>The details of how this works have changed in rsnapshot version 1.3.1.
+Originally you could only ever have one .delete directory per backup level.
+Now you can have many, so if your next (eg) hourly backup kicks off while the
+previous one is still doing a lazy delete you may temporarily have extra
+_delete directories hanging around.
+
+<footer>

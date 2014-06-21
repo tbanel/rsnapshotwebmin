@@ -1,0 +1,44 @@
+<header>Commands </header>
+
+<p><strong>cmd_cp</strong></p>
+<p>
+  Full path to cp  (optional, but must be GNU version)
+<p>
+  If you are using Linux, you should uncomment cmd_cp. If you are
+  using a platform which does not have GNU cp, you should leave
+  cmd_cp commented out.
+<p>
+  With GNU cp, rsnapshot can take care of both normal files and
+  special files (such as FIFOs, sockets, and block/character devices)
+  in one pass.
+<p>
+  If cmd_cp is disabled, rsnapshot will use its own built-in
+  function, native_cp_al() to backup up regular files and
+  directories. This will then be followed up by a separate call to
+  rsync, to move the special files over (assuming there are any).
+
+<p><strong>cmd_rm</strong></p>
+<p>
+  Full path to rm (optional)
+
+<p><strong>cmd_logger</strong></p>
+<p>
+  Full path to logger (optional, for syslog support)
+
+<p><strong>cmd_rsnapshot_diff</strong></p>
+<p>
+ Full path to rsnapshot-diff (optional)
+
+<p><strong>cmd_preexec</strong></p>
+<p>
+  Full path (plus any arguments) to preexec script (optional).  This
+  script will run immediately before each backup operation (but not
+  any rotations).
+
+<p><strong>cmd_postexec</strong></p>
+<p>
+  Full path (plus any arguments) to postexec script (optional).  This
+  script will run immediately after each backup operation (but not
+  any rotations).
+
+<footer>

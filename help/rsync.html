@@ -1,0 +1,52 @@
+<header>Rsync </header>
+
+<p><strong>cmd_rsync</strong></p>
+<p>
+  Full path to rsync (required)
+
+<p><strong>rsync_numtries</strong>
+<p>
+Number of rsync re-tries.
+If you experience any network problems or
+network card issues that tend to cause ssh to crap-out with
+"Corrupted MAC on input" errors, for example, set this to a non-zero
+value to have the rsync operation re-tried.
+
+<p><strong>rsync_short_args    -a</strong>
+
+</p>
+<p>List of short arguments to pass to rsync. If not specified,
+``-a'' is the default. Please note that these must be all next to each other.
+For example, ``-az'' is valid, while ``-a -z'' is not.
+
+</p>
+<p>``-a'' is rsync's ``archive mode'' which tells it to copy as much of the
+filesystem metadata as it can for each file.  This specifically does *not*
+include information about hard links, as that would greatly increase rsync's
+memory usage and slow it down.  If you need to preserve hard links in your
+backups, then add ``H'' to this.
+
+</p>
+<p><strong>rsync_long_args     --delete --numeric-ids --relative --delete-excluded</strong>
+
+</p>
+<p>List of long arguments to pass to rsync.  The default values are
+    --delete --numeric-ids --relative --delete-excluded
+This means that the directory structure in each backup point destination 
+will match that in the backup point source.
+
+</p>
+<p>Quotes are permitted in rsync_long_args, eg --rsync-path=``sudo /usr/bin/rsync''.
+You may use either single (') or double (``) quotes, but nested quotes (including
+mixed nested quotes) are not permitted.  Similar quoting is also allowed in
+per-backup-point rsync_long_args.
+
+<p><strong>link_dest           1</strong>
+
+</p>
+<p>If your version of rsync supports --link-dest (2.5.7 or newer), you can enable
+this to let rsync handle some things that GNU cp or the built-in subroutines would
+otherwise do. Enabling this makes rsnapshot take a slightly more complicated code
+branch, but it's the best way to support special files on non-Linux systems.
+
+<footer>

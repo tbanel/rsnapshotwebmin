@@ -1,0 +1,14 @@
+* Version 0.1
+** Create first version
+
+* Version 0.2
+** Added more blank fields
+** A dry run to understand what rsnapshot will do
+
+* Version 0.3
+** Blank fields at the begining of lists
+   (to easily add items at the head of lists)
+** Chooser for the number of retentions increased
+   Between 0 and current value + 24
+** Support for Cron
+** Support for Anacron

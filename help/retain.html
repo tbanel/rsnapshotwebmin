@@ -1,0 +1,69 @@
+<header>Retain</header>
+
+</p>
+<p><strong>retain</strong>             [name]   [number]
+
+</p>
+<p>``name'' refers to the name of this backup level (e.g., hourly, daily,
+so also called the 'interval'). ``number''
+is the number of snapshots for this type of interval that will be retained.
+The value of ``name'' will be the command passed to <strong>rsnapshot</strong> to perform
+this type of backup.
+
+
+</p>
+<p>A deprecated alias for 'retain' is 'interval'.
+
+</p>
+<p>Example: <strong>retain hourly 6</strong>
+
+</p>
+<p>[root@localhost]# <strong>rsnapshot hourly</strong>
+
+</p>
+<p>For this example, every time this is run, the following will happen:
+
+</p>
+<p>&lt;snapshot_root&gt;/hourly.5/ will be deleted, if it exists.
+
+
+</p>
+<p>&lt;snapshot_root&gt;/hourly.{1,2,3,4} will all be rotated +1, if they exist.
+
+</p>
+<p>&lt;snapshot_root&gt;/hourly.0/ will be copied to &lt;snapshot_root&gt;/hourly.1/
+using hard links.
+
+</p>
+<p>Each backup point (explained below) will then be rsynced to the
+corresponding directories in &lt;snapshot_root&gt;/hourly.0/
+
+</p>
+<p>Backup levels must be specified in the config file in order, from most
+frequent to least frequent. The first entry is the one which will be
+synced with the backup points. The subsequent backup levels (e.g., daily,
+weekly, etc) simply rotate, with each higher backup level pulling from the
+one below it for its .0 directory.
+
+</p>
+<p>Example:
+
+</p>
+
+<p><strong>retain  hourly 6</strong>
+
+</p>
+<p><strong>retain  daily  7</strong>
+
+</p>
+<p><strong>retain  weekly 4</strong>
+
+</p>
+<p>daily.0/ will be copied from hourly.5/, and weekly.0/ will be copied from daily.6/
+
+</p>
+<p>hourly.0/ will be rsynced directly from the filesystem.
+
+
+
+<footer>
