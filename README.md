@@ -12,14 +12,17 @@ Installation
 - Go to Webmin > Webmin Configuration > Webmin Modules
 - Check Third party module from and choose the rsnapshot entry.
 - OR Check From ftp or http URL,
-  and enter the url of the plug-in:
-  http://tbanelwebmin.free.fr/rsnapshot-0.3.wbm.gz
+  and enter the url of the plug-in (either one):
+  - http://tbanelwebmin.free.fr/rsnapshot-0.3.wbm.gz
+  - https://github.com/tbanel/rsnapshotwebmin/releases/download/v0.3/rsnapshot-0.3.wbm.gz
 
 When done, the module is accessible from System > Rsnapshot Backup.
 
-You may also download the module here: http://tbanelwebmin.free.fr/rsnapshot-0.3.wbm.gz
+You may also download the module
+- here: http://tbanelwebmin.free.fr/rsnapshot-0.3.wbm.gz
+- or here: https://github.com/tbanel/rsnapshotwebmin/releases/download/v0.3/rsnapshot-0.3.wbm.gz
 
-License
+License
 =======
 
 This program is free software: you can redistribute it and/or modify
