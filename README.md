@@ -35,7 +35,7 @@ WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
 General Public License for more details.
 
-Author: © 2012, 2013, 2014, Thierry Banel <tbanelwebmin@free.fr>
+Author: © 2012, 2013, 2014, 2015 Thierry Banel <tbanelwebmin@free.fr>
 
 Contributors (with permission):
   - Ken (ken at farville dot com)

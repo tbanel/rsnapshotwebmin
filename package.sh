@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# Copyright (c) 2012, 2013, 2014 Thierry Banel
+# Copyright (c) 2012, 2013, 2014, 2015 Thierry Banel
 #
 # Rsnapshot Webmin Module: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
