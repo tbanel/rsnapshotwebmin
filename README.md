@@ -62,6 +62,11 @@ of directories at intervals.
 It does so in an efficient way: only changes from a snapshot to the
 next use disk space.
 
+Author
+======
+
+Thierry Banel, tbanelwebmin at free dot fr
+
 Related works
 =============
 
