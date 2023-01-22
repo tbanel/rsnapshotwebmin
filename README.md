@@ -22,7 +22,7 @@ You may also download the module
 - here: http://tbanelwebmin.free.fr/rsnapshot-0.3.wbm.gz
 - or here: https://github.com/tbanel/rsnapshotwebmin/releases/download/v0.3/rsnapshot-0.3.wbm.gz
 
-License
+License
 =======
 
 This program is free software: you can redistribute it and/or modify
@@ -35,7 +35,7 @@ WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
 General Public License for more details.
 
-Author: © 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020; 2021, 2022 Thierry Banel <tbanelwebmin@free.fr>
+Author: © 2012-2023 Thierry Banel <tbanelwebmin@free.fr>
 
 Contributors (with permission):
   - Ken (ken at farville dot com)
